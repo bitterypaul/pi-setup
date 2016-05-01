@@ -1,0 +1,1 @@
+x11vnc -bg -nevershared -forever -tightfilexfer -nopw -display :0

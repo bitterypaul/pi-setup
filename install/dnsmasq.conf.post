@@ -1,0 +1,16 @@
+interface=wlan0      
+bind-interfaces      
+addn-hosts=/etc/pihole/gravity.list
+no-resolv
+server=208.67.222.123
+server=208.67.220.123
+domain-needed       
+bogus-priv         
+dhcp-range=192.160.1.10,192.160.1.20
+cache-size=10000
+log-queries
+log-facility=/var/log/pihole.log
+local-ttl=300
+log-async
+
+

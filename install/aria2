@@ -1,0 +1,30 @@
+#! /bin/sh
+# /etc/init.d/aria2
+### BEGIN INIT INFO
+# Provides:          aria2
+# Required-Start:    $local_fs
+# Required-Stop:     $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: aria2
+### END INIT INFO
+
+CONF_PATH=/home/pi/.aria2/aria2.config
+
+case "$1" in
+    start)
+        echo "Starting aria2 with custom configuration"
+        aria2c --conf-path=$CONF_PATH
+        ;;
+    stop)
+        echo "Stopping aria2"
+        killall aria2c
+        ;;
+    *)
+        echo "Usage: /etc/init.d/aria2 {start|stop}"
+        exit 1
+        ;;
+esac
+
+exit 0
+
